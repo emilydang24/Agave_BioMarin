@@ -1,0 +1,133 @@
+// {{{ 2 "IncludeGuard" "PragmaOnce"
+#pragma once
+// }} ""
+#include "HSLUtilLib.hsl"
+#include "HSLStrLib.hsl"
+#include "HSLTimLib.hsl"
+/* {{ 2 "LibraryInsertLine" "" */ // }} ""
+// {{ 2 "TemplateIncludeBlock" ""
+#include "HSLMETEDLib.hs_"
+#include "HSLMECCLib.hs_"
+#include "templates\\HSLPipetteWizard.hsl"
+#include "HSLSchedCCLib.hs_"
+// }} ""
+// {{{ 2 "LibraryNamespace" "Begin"
+namespace AGAVE_METHODUTILITIES {
+// }} ""
+/* {{ 2 "VariableInsertLine" "" */ // }} ""
+// {{{ 2 "SubmethodForwardDeclaration" ""
+function CheckSimulationMode( device & ML_STAR ) variable ;
+function DateTimeStamp( variable & calc_o_s_concatDateTime ) void ;
+function ErrorLogTrace( variable input_traceString ) void ;
+function StandardLogTrace( variable input_traceString ) void ;
+private function _StandardLibraryTrace( variable input_traceString ) void ;
+// }} ""
+function _InitLibrary() {
+// {{ 2 "AutoInitBlock" ""
+// }} ""
+}
+function _ExitLibrary() {
+// {{ 2 "AutoExitBlock" ""
+// }} ""
+}
+// {{{ 5 "CheckSimulationMode" "Begin"
+function CheckSimulationMode( device & ML_STAR ) variable {
+// }} ""
+private variable retSim;
+// {{ 5 "CheckSimulationMode" "InitLocals"
+// }} ""
+// {{{ 1 1 0 "6b6dcf7d_782d_43db_9d50e691fe0d8f4b" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+retSim = Util::GetSimulationMode();
+// }} ""
+// {{ 2 1 0 "aeb49b6f_caf2_46f2_acef7e53c30569d7" "{B31F3531-5D80-11d4-A5EB-0050DA737D89}"
+if (retSim == 1)
+{
+// }} ""
+// {{{ 3 1 0 "2d6cc596_bb3f_4bf5_adeeb79ac8c9305a" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+_StandardLibraryTrace(Translate("THIS IS A SIMULATED RUN"));
+// }} ""
+// {{ 4 1 0 "aeb49b6f_caf2_46f2_acef7e53c30569d7" "{B31F3531-5D80-11d4-A5EB-0050DA737D89}"
+}
+else
+{
+// }} ""
+// {{{ 5 1 0 "fd842531_586c_4c26_a7eabc34852cea89" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+_StandardLibraryTrace(Translate("THIS IS A FUNCTIONAL RUN"));
+// }} ""
+// {{ 6 1 0 "aeb49b6f_caf2_46f2_acef7e53c30569d7" "{B31F3531-5D80-11d4-A5EB-0050DA737D89}"
+}
+// }} ""
+// {{{ 7 1 0 "2df04015_c9e6_4c8f_a88144db39ec9f41" "{9EC997CD-FD3B-4280-811B-49E99DCF062C}"
+return (retSim);
+// }} ""
+// {{{ 5 "CheckSimulationMode" "End"
+}
+// }} ""
+// {{{ 5 "_StandardLibraryTrace" "Begin"
+private function _StandardLibraryTrace( variable input_traceString ) void {
+// }} ""
+// {{ 5 "_StandardLibraryTrace" "InitLocals"
+// }} ""
+Trace("########################################################");
+Trace(input_traceString);
+Trace("########################################################");
+// {{{ 5 "_StandardLibraryTrace" "End"
+}
+// }} ""
+// {{{ 5 "DateTimeStamp" "Begin"
+function DateTimeStamp( variable & calc_o_s_concatDateTime ) void {
+// }} ""
+private variable retTime;
+private variable retDate;
+private variable str_traceDateTime;
+// {{ 5 "DateTimeStamp" "InitLocals"
+calc_o_s_concatDateTime = 0;
+// }} ""
+// {{{ 9 1 0 "79b8c7b1_14ec_4ac1_aad0785008945c61" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+retTime = TimGetFormattedTime(Translate(""));
+// }} ""
+// {{{ 10 1 0 "64939672_5661_47a6_8b5f4e10e79a69aa" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+StrReplace(retTime, Translate(":"), Translate(""));
+// }} ""
+// {{{ 11 1 0 "d3d7f206_9194_404b_b1c1473b76ba48d6" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+retDate = TimGetFormattedDate(Translate("%Y%m%d"));
+// }} ""
+// {{{ 12 1 0 "079e315b_c4f3_418d_838a93ac14ee1ab3" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+calc_o_s_concatDateTime = StrConcat4(retDate, Translate(""), retTime, Translate(""));
+// }} ""
+// {{{ 13 1 0 "b8584547_c2cb_4847_9b13c8d34a8bbd91" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+str_traceDateTime = StrConcat2(Translate("DateTime of run: "), calc_o_s_concatDateTime);
+// }} ""
+// {{{ 14 1 0 "f5fe1b22_3834_422d_9eacdd31274a5713" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+_StandardLibraryTrace(str_traceDateTime);
+// }} ""
+// {{{ 5 "DateTimeStamp" "End"
+}
+// }} ""
+// {{{ 5 "StandardLogTrace" "Begin"
+function StandardLogTrace( variable input_traceString ) void {
+// }} ""
+// {{ 5 "StandardLogTrace" "InitLocals"
+// }} ""
+Trace("====================================================");
+Trace(input_traceString);
+Trace("====================================================");
+// {{{ 5 "StandardLogTrace" "End"
+}
+// }} ""
+// {{{ 5 "ErrorLogTrace" "Begin"
+function ErrorLogTrace( variable input_traceString ) void {
+// }} ""
+// {{ 5 "ErrorLogTrace" "InitLocals"
+// }} ""
+Trace("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+Trace(input_traceString);
+Trace("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+// {{{ 5 "ErrorLogTrace" "End"
+}
+// }} ""
+/* {{ 2 "SubmethodInsertLine" "" */ // }} ""
+// {{{ 2 "LibraryNamespace" "End"
+} // library namespace
+// }} ""
+// $$author=emils$$valid=0$$time=2026-10-31 14:22$$checksum=9d64f7ce$$length=084$$

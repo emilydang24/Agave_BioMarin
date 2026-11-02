@@ -1,0 +1,20 @@
+
+// this ALWAYS GENERATED file contains the sub-method library header
+// Generated at 10/31/2026 2:22:16 PM
+
+#pragma once
+#ifndef HSL_RUNTIME
+namespace AGAVE_METHODUTILITIES {
+function _InitLibrary() { }
+function _ExitLibrary() { }
+function CheckSimulationMode( device & ML_STAR ) variable {  return (0); }
+function DateTimeStamp( variable & calc_o_s_concatDateTime ) void { }
+function ErrorLogTrace( variable input_traceString ) void { }
+function StandardLogTrace( variable input_traceString ) void { }
+} // namespace
+#endif
+
+#ifdef HSL_RUNTIME
+#include __filename__ ".hsi"
+#endif
+// $$author=emils$$valid=0$$time=2026-10-31 14:22$$checksum=1acc5433$$length=082$$
