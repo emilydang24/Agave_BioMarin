@@ -1,0 +1,29 @@
+<Window Title="Kit Selection" SizeToContent="Manual" ResizeMode="NoResize" Background="#FF2E8B57" Width="598.8" Height="601.8" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:hhcdf="clr-namespace:Hamilton.HxCustomDialog.Framework;assembly=Hamilton.HxCustomDialogCore" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Window.Resources>
+    <hhcdf:HxSound SoundFile="{x:Null}" x:Key="HxSoundResourceKey" />
+    <hhcdf:HxTheme Value="Default" x:Key="HxThemeResourceKey" />
+    <hhcdf:HxVariableBinding BindingMode="Out" PropertyName="ReturnValue" ElementName="" VariableName="o_ret_dialog" x:Key="ReturnValue" />
+  </Window.Resources>
+  <hhcdf:HxCanvasCtrl Width="Auto" Height="Auto" Focusable="True">
+    <hhcdf:HxTextBlockCtrl Background="#FFFFFFFF" TextWrapping="Wrap" Name="textBlock5" Width="792" Height="99" Margin="3,3,3,3" Opacity="1" Canvas.Left="-7" Canvas.Top="483" />
+    <hhcdf:HxTextBlockCtrl Background="#FFFFFFFF" TextWrapping="Wrap" Name="textBlock1" Width="834" Height="99" Margin="3,3,3,3" Opacity="1" Canvas.Left="-7" Canvas.Top="-14" />
+    <hhcdf:HxImageCtrl MaintainAspectRatio="False" Stretch="Fill" Name="image2" Width="120" Height="85" Opacity="1" Canvas.Left="441" Canvas.Top="0">
+      <hhcdf:HxImageCtrl.Source>
+        <BitmapImage BaseUri="{x:Null}" UriSource="CustomDialog_Continue_Abort\agaave.png" CacheOption="OnLoad" />
+      </hhcdf:HxImageCtrl.Source>
+      <hhcdf:HxImageCtrl.Effect>
+        <DropShadowEffect ShadowDepth="0" Color="#FF000000" Opacity="0" BlurRadius="0" />
+      </hhcdf:HxImageCtrl.Effect>
+    </hhcdf:HxImageCtrl>
+    <hhcdf:HxImageCtrl MaintainAspectRatio="False" Stretch="Fill" Name="image1" Width="274" Height="148" Opacity="1" Canvas.Left="0" Canvas.Top="-21">
+      <hhcdf:HxImageCtrl.Source>
+        <BitmapImage BaseUri="{x:Null}" UriSource="CustomDialog_Continue_Abort\ag.png" CacheOption="OnLoad" />
+      </hhcdf:HxImageCtrl.Source>
+      <hhcdf:HxImageCtrl.Effect>
+        <DropShadowEffect ShadowDepth="3" Color="#FF000000" Opacity="0.4" BlurRadius="6" />
+      </hhcdf:HxImageCtrl.Effect>
+    </hhcdf:HxImageCtrl>
+    <hhcdf:HxButtonCtrl ClosesDialog="True" ReturnValue="1" Background="#FF00FF00" FontStyle="Normal" FontWeight="Bold" TabIndex="9999" Name="button2" Width="106" Height="36" Opacity="1" Canvas.Left="308" Canvas.Top="511">CONTINUE</hhcdf:HxButtonCtrl>
+    <hhcdf:HxButtonCtrl ClosesDialog="True" ReturnValue="1" Background="#FFFF0000" FontStyle="Normal" FontWeight="Bold" TabIndex="9999" Name="button3" Width="106" Height="36" Opacity="1" Canvas.Left="175" Canvas.Top="511">ABORT</hhcdf:HxButtonCtrl>
+  </hhcdf:HxCanvasCtrl>
+</Window>
