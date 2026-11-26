@@ -1,12 +1,11 @@
 #include "POM2_Norm_Quant_v1.0.0.res"
  namespace _Method { #include "Library\\MethodUtilities\\AGAVE_MethodUtilities.hs_" } 
  namespace _Method { #include "ASWStandard\\TraceLevel\\TraceLevel.hsl" } 
- namespace _Method { #include "HSLUtilLib.hsl" } 
  namespace _Method { #include "HSLUtilLib2.hsl" } 
+ namespace _Method { #include "HSLUtilLib.hsl" } 
  namespace _Method { #include "HSLExtensions\\Framework\\HSLExtensionsFramework.hsl" } 
  namespace _Method { #include "HSLExtensions\\Core.hsl" } 
  namespace _Method { #include "HSLDevLib.hsl" } 
- namespace _Method { #include "PersonalisUtilityLibrary_v1_0.hs_" } 
  namespace _Method { #include "ASWStandard\\ASWGlobal\\ASWGlobal.hsl" } 
  namespace _Method { #include "HSLSeqLib.hsl" } 
 /* {{ 2 "LibraryInsertLine" "" */ // }} ""
@@ -32,61 +31,34 @@ variable var_int_num_1000_tips;
 variable file1_intermediate_wells;
 file file1;
 variable arr_str_source_bcs[];
-variable arr_transfer_volume_2000dil[];
-variable arr_intermediate_50000dil_destination_wells[];
-variable arr_transfer_volume_4000dil[];
-variable arr_intermediate_10000dil_destination_wells[];
-variable arr_intermediate_40dil_destination_wells[];
-variable arr_source_800dil_wells[];
-variable arr_transfer_volume_10000dil[];
-variable arr_transfer_volume_8000dil[];
-variable arr_source_10000dil_wells[];
-variable arr_intermediate_8000dil_destination_wells[];
 variable arr_destination_wells[];
-variable arr_source_40dil_wells[];
-variable arr_source_50000dil_wells[];
 variable arr_intermediate_source_to_desintation_wells[];
-variable arr_source_4000dil_wells[];
-variable arr_transfer_volume_50000dil[];
-variable arr_intermediate_4000dil_destination_wells[];
-variable arr_transfer_volume_40dil[];
-variable arr_intermediate_2000dil_destination_wells[];
-variable arr_intermediate_800dil_destination_wells[];
-variable arr_transfer_volume_800dil[];
-variable arr_source_8000dil_wells[];
-variable arr_source_2000dil_wells[];
-variable arr_diluent_volume_8000dil[];
-variable arr_diluent_volume_50000dil[];
-variable arr_diluent_volume_800dil[];
-variable arr_diluent_volume_40dil[];
-variable arr_diluent_volume_10000dil[];
-variable arr_diluent_volume_2000dil[];
-variable arr_diluent_volume_4000dil[];
 variable var_str_sample_barcode_temp;
-variable arr_intermediate_8000dil_destination_labwareID[];
 variable arr_str_dilution_factor[];
-variable arr_intermediate_10000dil_destination_labwareID[];
-variable arr_intermediate_50000dil_destination_labwareID[];
-variable arr_intermediate_800dil_destination_labwareID[];
-variable arr_transfer_volume_final[];
 variable arr_intermediate_source_to_desintation_labwareID[];
-variable arr_intermediate_2000dil_destination_labwareID[];
-variable arr_intermediate_40dil_destination_labwareID[];
-variable arr_intermediate_4000dil_destination_labwareID[];
 variable arr_str_sample_type[];
-variable str_temp_intermediate_well;
-variable str_temp_interemediate_labwareID;
-variable str_temp_destination_well;
-variable bln_success;
-variable int_dilution_factor;
 variable arr_diluent_volume_all[];
 variable arr_transfer_volume_all[];
-variable arr_destination_well_id_all[];
 variable arr_source_well_id_all[];
-variable arr_intermediate_well_id_all[];
-variable arr_intermediate_labware_id_all[];
-variable str_liquid_class_reactor;
 dialog customDialog505EE87E63074be6B0F36C9F36E6EB2E;
+variable str_liquid_class_diluent_1000;
+variable str_liquid_class_dp_300;
+variable str_liquid_class_aex_300;
+variable str_liquid_class_cex_300;
+variable str_liquid_class_ds_300;
+variable str_liquid_class_reactor_300;
+variable str_liquid_class_cex_50;
+variable str_liquid_class_permeate_50;
+variable str_liquid_class_permeate_300;
+variable str_liquid_class_fbds_50;
+variable str_liquid_class_aex_50;
+variable str_liquid_class_reactor_50;
+variable str_liquid_class_imac_50;
+variable str_liquid_class_imac_300;
+variable str_liquid_class_ds_50;
+variable str_liquid_class_diluent_300;
+variable str_liquid_class_dp_50;
+variable str_liquid_class_fbds_300;
 /* {{ 2 "VariableInsertLine" "" */ // }} ""
 // {{ 2 "TemplateIncludeBlock" ""
  namespace _Method { #include "HSLMETEDLib.hs_" } 
@@ -119,7 +91,6 @@ PTL::SetLoadingStateDefault("RecoveryOptionExclude", hslTrue);
 PTL::SetLoadingStateDefault("RecoveryOptionDefault", 0);
 PTL::SetLoadingStateDefault("KitLotCheckEnabled", hslFalse);
 AGAVE_METHODUTILITIES::_InitLibrary();
-PERSONALISUTILITYLIBRARY_V1_0::_InitLibrary();
 ::RegisterAbortHandler( "OnAbort");
 // }} ""
 // {{ 1 1 0 "3003f5ae_850c_4a38_b830f2a72518bf98" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
@@ -325,9 +296,8 @@ ReadWorklist_POM2();
 // }} ""
 // {{ 2 "AutoExitBlock" ""
 AGAVE_METHODUTILITIES::_ExitLibrary();
-PERSONALISUTILITYLIBRARY_V1_0::_ExitLibrary();
 // }} ""
 // {{{ 5 "main" "End"
 } }
 // }} ""
-// $$author=emils$$valid=0$$time=2026-11-02 21:27$$checksum=58928f34$$length=084$$
+// $$author=emils$$valid=0$$time=2026-11-25 18:07$$checksum=0bec980f$$length=084$$
